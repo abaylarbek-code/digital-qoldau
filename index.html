@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Digital Qoldau | Шектеусіз IT-Білім беру Платформасы</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ================================================= */
+        /* I. ТҮСТЕР ЖӘНЕ ЖАЛПЫ СТИЛЬДЕР (ӨЗГЕРІССІЗ) */
+        /* ================================================= */
+
+        :root {
+            --primary-color: #004d99; /* Қою Көк */
+            --secondary-color: #00b386; /* Қою Жасыл/Мята (Акцент) */
+            --accent-color: #ff9900; /* Қызғылт Сары */
+            --text-color: #333333;
+            --bg-light: #f4f6f9;
+            --bg-white: #ffffff;
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --transition-speed: 0.4s;
+        }
+
+        /* Глобалды Стильдер */
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1300px;
+        }
+        .section {
+            padding: 6em 0;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 30px;
+            border-radius: 2px;
+        }
+
+        /* Батырмалар */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 4px 10px rgba(0, 179, 134, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 77, 153, 0.4);
+        }
+
+        /* ================================================= */
+        /* II. HEADER ЖӘНЕ HERO СЕКЦИЯЛАРЫ (ӨЗГЕРІССІЗ) */
+        /* ================================================= */
+        
+        /* HEADER */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 1em 0;
+            position: sticky;
+            top: 45px; 
+            z-index: 1000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* ЛОГОТИП СТИЛІ */
+        .logo { 
+            font-size: 2em; 
+            font-weight: 900; 
+            color: var(--primary-color); 
+            text-decoration: none;
+            cursor: default; 
+        } 
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 35px;
+            font-weight: 500;
+            transition: color var(--transition-speed), border-bottom var(--transition-speed);
+            padding-bottom: 5px;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #e0f0ff 0%, #ffffff 100%);
+            padding: 10em 0 8em;
+            text-align: left;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero-text { max-width: 55%; }
+        .hero h1 {
+            font-size: 4em;
+            color: var(--primary-color);
+            line-height: 1.1;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .hero-image {
+            width: 40%;
+            background: var(--primary-color); 
+            height: 300px; 
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 77, 153, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            transform: skewX(-10deg) translateX(-100%);
+            transition: transform 1s ease-in-out;
+        }
+        .hero-image:hover::before {
+            transform: skewX(-10deg) translateX(100%);
+        }
+
+        /* ================================================= */
+        /* VII. АРНАЙЫ МҮМКІНДІКТЕР СТИЛДЕРІ (ӨЗГЕРІССІЗ) */
+        /* ================================================= */
+        
+        .high-contrast { 
+            background-color: #ffffff !important; 
+            color: #000000 !important; 
+        }
+        .high-contrast h1, .high-contrast h2, .high-contrast h3, .high-contrast p, .high-contrast a, 
+        .high-contrast i, .high-contrast span, .high-contrast li {
+            color: #000000 !important; 
+            border-color: #333333 !important;
+        }
+        .high-contrast .hero h1 span, .high-contrast .stat-item h3 {
+            color: #cc0000 !important; 
+        }
+        .high-contrast .hero-image, 
+        .high-contrast .cta-button, 
+        .high-contrast .price-package.standard-pro .cta-button {
+            background-color: #0000cc !important; 
+            color: white !important;
+        }
+        .high-contrast .price-package, .high-contrast .card, .high-contrast .finance-block, .high-contrast .channel-block, .high-contrast .testimonial-card {
+             background-color: #f0f0f0 !important; 
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important;
+        }
+        .high-contrast header, .high-contrast footer, .high-contrast .stats-section, .high-contrast .pricing-table-container, .high-contrast .contact-form form {
+             background-color: #333333 !important; 
+             color: white !important;
+        }
+        .high-contrast .stats-section h3, .high-contrast .stats-section p, 
+        .high-contrast header a, .high-contrast footer p, .high-contrast footer a { 
+            color: white !important; 
+        }
+        .high-contrast a { text-decoration: underline !important; }
+        
+        /* Түстерді ажырата алмайтындарға арналған режим (Grayscale) */
+        .grayscale-mode {
+            filter: grayscale(100%);
+        }
+
+        .large-text { font-size: 1.15em; }
+
+        /* ================================================= */
+        /* III. СТАТИСТИКА БЛОГЫ (ӨЗГЕРІССІЗ) */
+        /* ================================================= */
+        
+        .stats-section {
+            background-color: var(--primary-color);
+            padding: 4em 0;
+            color: white;
+        }
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            flex: 1;
+            min-width: 150px;
+        }
+        .stat-item:last-child {
+            border-right: none;
+        }
+        .stat-item h3 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 900;
+            color: var(--accent-color);
+        }
+        .stat-item p {
+            font-size: 1.1em;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        /* ================================================= */
+        /* IV. КУРС/ТАРИФ КАРТОЧКАЛАРЫ (ӨЗГЕРІССІЗ) */
+        /* ================================================= */
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .card {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed) ease;
+            text-align: left;
+            border-left: 5px solid var(--primary-color);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-left: 5px solid var(--secondary-color);
+        }
+        .card i {
+            font-size: 2.5em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Курс Деталдары */
+        .course-card-detailed {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed) ease;
+            text-align: left;
+            border-top: 8px solid var(--primary-color);
+            position: relative;
+        }
+        .course-card-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-top-color: var(--secondary-color);
+        }
+        .course-card-detailed i {
+            font-size: 2.8em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            float: right;
+        }
+        .course-card-detailed h3 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .course-specs {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 1em;
+            font-weight: bold;
+            color: #555;
+        }
+        .spec-item {
+            text-align: center;
+            flex: 1;
+            padding: 5px;
+            border-right: 1px dashed #ddd;
+        }
+        .spec-item:last-child { border-right: none; }
+        .spec-item span { display: block; font-weight: normal; color: var(--text-color); margin-top: 5px; }
+
+        /* Тарифтік Пакеттер Стилі */
+        .pricing-table-container {
+            margin-top: 70px;
+            padding: 40px 0;
+            background-color: var(--bg-light);
+            border-radius: 10px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .price-package {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            transition: all var(--transition-speed);
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .price-package:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        .price-package.standard-pro {
+            border: 3px solid var(--secondary-color);
+            transform: scale(1.07);
+            box-shadow: 0 20px 50px rgba(0, 179, 134, 0.4);
+        }
+        .price-package h4 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .price-package .price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        .price-package .price sup { font-size: 0.5em; font-weight: normal; }
+        .price-package ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .price-package li {
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #eee;
+            padding-bottom: 5px;
+        }
+        .price-package li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        .price-package li i.fa-times-circle {
+            color: #dc3545;
+        }
+        
+        /* Тарифтік батырма */
+        .price-package .cta-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+        }
+        .price-package.standard-pro .cta-button {
+            background-color: var(--secondary-color);
+        }
+
+
+        /* ================================================= */
+        /* V. ҚАЛҒАН СЕКЦИЯЛАР (ӨЗГЕРІССІЗ) */
+        /* ================================================= */
+
+        /* 3D Инновация Блоктары */
+        .innovation-card {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            perspective: 1000px;
+            transition: transform 0.6s, box-shadow 0.6s;
+            border: 1px solid #eee;
+        }
+        .innovation-card:hover {
+            transform: rotateY(5deg) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        .innovation-card h3 i {
+            color: var(--accent-color);
+            margin-right: 15px;
+        }
+        /* Пікірлер Секциясы */
+        .testimonial-section { background-color: var(--bg-white); }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px; }
+        .testimonial-card { background-color: var(--bg-light); padding: 30px; border-radius: 10px; box-shadow: var(--shadow-light); text-align: left; border-top: 4px solid var(--secondary-color); position: relative; }
+        .testimonial-card i.quote-icon { font-size: 2em; color: var(--accent-color); position: absolute; top: 15px; right: 20px; opacity: 0.5; }
+        .author { font-weight: bold; color: var(--primary-color); display: block; margin-top: 10px; }
+        
+        /* Қаржы Блоктары */
+        .finance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; text-align: left; }
+        .finance-block, .channel-block { background-color: var(--bg-white); padding: 35px; border-radius: 10px; box-shadow: var(--shadow-light); }
+
+        /* Команда */
+        .team-member { width: 200px; margin: 20px; text-align: center; }
+        .team-member img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--accent-color); object-fit: cover; transition: border-color 0.4s; }
+        .team-member:hover img { border-color: var(--secondary-color); }
+        
+        /* Footer */
+        footer { background-color: var(--primary-color); color: white; padding: 2.5em 0; font-size: 0.95em; }
+        .footer-links a { color: white; margin: 0 10px; text-decoration: none; opacity: 0.8; transition: opacity 0.3s; }
+
+        /* Байланыс Формасы */
+        .contact-form form {
+            max-width: 600px; 
+            margin: 30px auto 0; 
+            padding: 30px;
+            background-color: var(--bg-white);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
+        }
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px; 
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form .cta-button {
+            width: 100%; 
+            padding: 18px; 
+            font-size: 1.1em;
+            border-radius: 8px; 
+        }
+        
+        /* Медиа сұраулар (Responsive) */
+        .menu-toggle { display: none; cursor: pointer; font-size: 1.8em; color: var(--primary-color); }
+
+        @media (max-width: 992px) {
+            header { top: 0; } 
+            .hero h1 { font-size: 3em; }
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-text, .hero-image { max-width: 100%; width: 100%; margin-top: 30px; }
+            .finance-grid { grid-template-columns: 1fr; }
+            nav { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background-color: var(--bg-white); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px 0; }
+            nav.open { display: flex; }
+            nav a { margin: 10px 20px; text-align: left; padding: 10px 0; border-bottom: 1px solid #eee; }
+            .menu-toggle { display: block; }
+            .header-content { justify-content: space-between; }
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        }
+    </style>
+    
+    <script>
+        // ======================================================================
+        // ТІЛДІК ДЕРЕКТЕРДІҢ ТОЛЫҚ СӨЗДІГІ (Қазақша/Орысша)
+        // ======================================================================
+
+        const langData = {
+            kk: {
+                // Жалпы
+                page_title: "Digital Qoldau | Шектеусіз IT-Білім беру Платформасы",
+                logo: "Digital Qoldau",
+                // Навигация
+                nav_mission: "Миссия",
+                nav_courses: "IT-Курстар",
+                nav_innovation: "Инновация",
+                nav_finance: "Қаржы",
+                nav_testimonials: "Пікірлер",
+                nav_team: "Команда",
+                nav_signup: "Жазылу",
+                // HERO
+                hero_h1: "Шектеусіз IT-Болашақ: <span style='color: var(--secondary-color);'>Digital Qoldau</span>-мен Бірге!",
+                hero_p: "Мүгедектігі бар азаматтарды қашықтықтан оқыту және IT-нарығына жұмысқа орналастыру арқылы **цифрлық теңдікті** қамтамасыз етеміз.",
+                hero_cta: "IT-Мамандықтарды Игеру",
+                hero_img_text: "Қашықтықтан Білім беру",
+                // Статистика
+                stat_1_h3: "700K+", stat_1_p: "Мүгедектігі бар азаматтар (gov.kz)",
+                stat_2_h3: "80%", stat_2_p: "IT-саладағы жұмысқа орналасу мүмкіндігі",
+                stat_3_h3: "5", stat_3_p: "Қашықтықтан оқытылатын IT-бағыттар",
+                stat_4_h3: "$80K", stat_4_p: "Қажетті Қаржыландыру Сомасы",
+                // Миссия
+                mission_h2: "Миссия және Басты Мәселе",
+                mission_1_h3: "МӘСЕЛЕ: Жұмыссыздық",
+                mission_1_p: "Қазақстандағы 700 000+ мүмкіндігі шектеулі азаматтардың тек 20%-ы ғана тұрақты жұмыспен қамтылған және жұмыс платформасы жоқ",
+                mission_2_h3: "ШЕШІМ: Инклюзивті Платформа",
+                mission_2_p: "Digital Qoldau - арнайы әзірленген инклюзивті интерфейсі бар, қашықтықтан оқытатын және жұмысқа орналастыруға кепілдік беретін платформа.",
+                mission_3_h3: "НӘТИЖЕ: Экономикалық Интеграция",
+                mission_3_p: "Білім беру арқылы олардың қаржылық тәуелсіздігін қамтамасыз ету, әлеуметтік интеграцияны және цифрлық теңдікті арттыру.",
+                // Курстар/Тарифтер
+                courses_h2: "🚀 Біз Ұсынатын IT-Курстар және Пакеттер",
+                courses_p: "Әрбір курс инклюзивті оқыту әдістемелеріне негізделген, 3 деңгейлі пакеттер арқылы таңдауға болады.",
+                tariffs_h2: "Тарифтік Пакеттерді Таңдаңыз",
+                
+                // Тарифтердің ішіндегі мәтіндер (тек Lite пакеті аударылды, қалғандары да осы үлгімен жалғасады)
+                lite_h4: "Lite Пакеті",
+                lite_price: "35 000 ₸ <sup>/ай</sup>",
+                lite_list_1: "Эксперт видеосабақтарына қол жеткізу",
+                lite_list_2: "Үй тапсырмаларын автоматты тексеру",
+                lite_list_3: "Жеке менторлық (Жоқ)",
+                lite_list_4: "HR-жәрмеңкеге қатысу (Жоқ)",
+                lite_list_5: "Жұмысқа орналасуға көмек (Жоқ)",
+                lite_cta: "Lite Пакетін Алу",
+
+                // (Қалған тарифтер мен курстарды осылай жалғастыруға болады)
+                
+                // Инновация
+                innovation_h2: "✨ Жобаның Инновациялық Артықшылықтары",
+                inn_1_h3: "Толық Инклюзивті Интерфейс",
+                inn_1_p: "Субтитр, дыбыстық оқу, контраст режимдері және жеңіл UX (User Experience) арқылы кез келген шектеуі бар адамға бейімделген.",
+                inn_2_h3: "Жеке Оқу Траекториясы",
+                inn_2_p: "Әр оқушының мүмкіндіктеріне сай жекеленген сабақтар, икемді уақыт кестесі және жеке менторлық қолдау.",
+                inn_3_h3: "Жұмысқа Орналастыру Бөлімі",
+                inn_3_p: "Түлектерді IT-компанияларға тікелей ұсыну. HR-жәрмеңкелер мен портфолио жасауға көмек арқылы нақты жұмысқа орналастыру.",
+                // Пікірлер
+                test_h2: "💬 Түлектеріміздің Пікірлері",
+                // Қаржы
+                finance_h2: "📈 Жобаның Қаржылық Негізі",
+                fin_1_h3: "Бюджет және Шығындар",
+                fin_1_p_main: "Жобаның жалпы бағасы: $100,000 | Қаржыландыру сомасы: $80,000 (80%)",
+                fin_2_h3: "Өткізу Арналары & Клиенттер",
+                fin_2_p_main: "Негізгі аудитория: Мүгедектігі бар адамдар және IT-мамандарды іздейтін жұмыс берушілер.",
+                // Команда
+                team_h2: "🤝 Біздің Серіктестер мен Команда",
+                team_partners_h3: "Сенімді Серіктестер",
+                team_main_h3: "Жобаның Негізгі Командасы (5 Мүше)",
+                // Байланыс
+                contact_h2: "Бізбен Хабарласыңыз",
+                contact_p: "Сұрақтарыңыз болса, немесе курстарға жазылғыңыз келсе, деректеріңізді қалдырыңыз. Өтінімді жіберу батырмасы жұмыс істейді.",
+                contact_name_ph: "Аты-жөніңіз",
+                contact_email_ph: "Email",
+                contact_msg_ph: "Хабарламаңыз (міндетті емес)",
+                contact_cta: "Өтінімді Жіберу",
+                // Footer
+                footer_p: "© 2025 Digital Qoldau. Инклюзивті Білім Беру Платформасы.",
+            },
+            ru: {
+                // Жалпы
+                page_title: "Digital Qoldau | Платформа Безграничного IT-Образования",
+                logo: "Digital Qoldau",
+                // Навигация
+                nav_mission: "Миссия",
+                nav_courses: "IT-Курсы",
+                nav_innovation: "Инновации",
+                nav_finance: "Финансы",
+                nav_testimonials: "Отзывы",
+                nav_team: "Команда",
+                nav_signup: "Записаться",
+                // HERO
+                hero_h1: "Безграничное IT-Будущее: Вместе с <span style='color: var(--secondary-color);'>Digital Qoldau</span>!",
+                hero_p: "Обеспечиваем **цифровое равенство** путем дистанционного обучения и трудоустройства лиц с инвалидностью на IT-рынке.",
+                hero_cta: "Освоить IT-Специальности",
+                hero_img_text: "Дистанционное Обучение",
+                // Статистика
+                stat_1_h3: "700K+", stat_1_p: "Граждане с инвалидностью (gov.kz)",
+                stat_2_h3: "80%", stat_2_p: "Возможность трудоустройства в IT-сфере",
+                stat_3_h3: "5", stat_3_p: "Направления IT-обучения",
+                stat_4_h3: "$80K", stat_4_p: "Необходимая Сумма Финансирования",
+                // Миссия
+                mission_h2: "Миссия и Основная Проблема",
+                mission_1_h3: "ПРОБЛЕМА: Безработица",
+                mission_1_p: "Из 700 000+ граждан с ограниченными возможностями в Казахстане только 20% имеют постоянную работу, отсутствует рабочая платформа",
+                mission_2_h3: "РЕШЕНИЕ: Инклюзивная Платформа",
+                mission_2_p: "Digital Qoldau - это инклюзивная платформа для IT-образования и трудоустройства, адаптированная для лиц с инвалидностью.",
+                mission_3_h3: "РЕЗУЛЬТАТ: Экономическая Интеграция",
+                mission_3_p: "Обеспечение их финансовой независимости через образование, повышение социальной интеграции и цифрового равенства.",
+                // Курстар/Тарифтер
+                courses_h2: "🚀 Предлагаемые IT-Курсы и Пакеты",
+                courses_p: "Каждый курс основан на инклюзивных методиках обучения, доступен выбор из 3-х уровневых пакетов.",
+                tariffs_h2: "Выберите Тарифные Пакеты",
+                
+                // Тарифтердің ішіндегі мәтіндер
+                lite_h4: "Пакет Lite",
+                lite_price: "35 000 ₸ <sup>/мес</sup>",
+                lite_list_1: "Доступ к видеоурокам экспертов",
+                lite_list_2: "Автоматическая проверка домашних заданий",
+                lite_list_3: "Личное менторство (Нет)",
+                lite_list_4: "Участие в HR-ярмарках (Нет)",
+                lite_list_5: "Помощь в трудоустройстве (Нет)",
+                lite_cta: "Получить Пакет Lite",
+                
+                // Инновация
+                innovation_h2: "✨ Инновационные Преимущества Проекта",
+                inn_1_h3: "Полностью Инклюзивный Интерфейс",
+                inn_1_p: "Адаптирован для людей с любыми ограничениями благодаря субтитрам, голосовому чтению, контрастным режимам и легкому UX.",
+                inn_2_h3: "Персональная Траектория Обучения",
+                inn_2_p: "Индивидуальные уроки, гибкий график и личное менторство в соответствии с возможностями каждого ученика.",
+                inn_3_h3: "Отдел Трудоустройства",
+                inn_3_p: "Прямое трудоустройство выпускников в IT-компании. Помощь с портфолио и HR-ярмарки.",
+                // Пікірлер
+                test_h2: "💬 Отзывы Наших Выпускников",
+                // Қаржы
+                finance_h2: "📈 Финансовая Основа Проекта",
+                fin_1_h3: "Бюджет и Расходы",
+                fin_1_p_main: "Общая стоимость проекта: $100,000 | Сумма финансирования: $80,000 (80%)",
+                fin_2_h3: "Каналы Сбыта & Клиенты",
+                fin_2_p_main: "Основная аудитория: Люди с инвалидностью и работодатели, ищущие IT-специалистов.",
+                // Команда
+                team_h2: "🤝 Наши Партнеры и Команда",
+                team_partners_h3: "Надежные Партнеры",
+                team_main_h3: "Основная Команда Проекта (5 Членов)",
+                // Байланыс
+                contact_h2: "Свяжитесь с Нами",
+                contact_p: "Если у вас есть вопросы или вы хотите записаться на курсы, оставьте свои данные. Кнопка отправки заявки работает.",
+                contact_name_ph: "Ваше имя и фамилия",
+                contact_email_ph: "Email",
+                contact_msg_ph: "Ваше сообщение (необязательно)",
+                contact_cta: "Отправить Заявку",
+                // Footer
+                footer_p: "© 2025 Digital Qoldau. Платформа Инклюзивного Образования.",
+            }
+        };
+
+        // ======================================================================
+        // JAVASCRIPT ЛОГИКАСЫ
+        // ======================================================================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            
+            // Арнайы мүмкіндіктер батырмалары
+            const contrastBtn = document.getElementById('contrast-btn');
+            const grayscaleBtn = document.getElementById('grayscale-btn');
+            const increaseTextBtn = document.getElementById('increase-text-btn');
+            const decreaseTextBtn = document.getElementById('decrease-text-btn');
+            const languageBtn = document.getElementById('language-btn');
+            const speechBtn = document.getElementById('speech-btn');
+
+            let currentLang = 'kk'; // Бастапқы тіл
+            let speechEnabled = false; 
+
+            // Тілді ауыстыру функциясы: Барлық мәтінді жаңартады
+            function updateContent(lang) {
+                document.getElementById('page-title').textContent = langData[lang].page_title;
+                document.querySelector('.logo').textContent = langData[lang].logo;
+                
+                // 1. НАВИГАЦИЯ
+                document.querySelector('a[data-lang-key="nav_mission"]').textContent = langData[lang].nav_mission;
+                document.querySelector('a[data-lang-key="nav_courses"]').textContent = langData[lang].nav_courses;
+                document.querySelector('a[data-lang-key="nav_innovation"]').textContent = langData[lang].nav_innovation;
+                document.querySelector('a[data-lang-key="nav_finance"]').textContent = langData[lang].nav_finance;
+                document.querySelector('a[data-lang-key="nav_testimonials"]').textContent = langData[lang].nav_testimonials;
+                document.querySelector('a[data-lang-key="nav_team"]').textContent = langData[lang].nav_team;
+                document.querySelector('a[data-lang-key="nav_signup"]').textContent = langData[lang].nav_signup;
+
+                // 2. HERO
+                document.querySelector('.hero h1').innerHTML = langData[lang].hero_h1;
+                document.querySelector('.hero p').innerHTML = langData[lang].hero_p;
+                document.querySelector('.hero .cta-button').childNodes[0].nodeValue = langData[lang].hero_cta + " ";
+                document.querySelector('.hero-image').childNodes[3].nodeValue = langData[lang].hero_img_text;
+
+                // 3. СТАТИСТИКА
+                document.querySelector('[data-stat="1"] h3').textContent = langData[lang].stat_1_h3;
+                document.querySelector('[data-stat="1"] p').textContent = langData[lang].stat_1_p;
+                document.querySelector('[data-stat="2"] h3').textContent = langData[lang].stat_2_h3;
+                document.querySelector('[data-stat="2"] p').textContent = langData[lang].stat_2_p;
+                document.querySelector('[data-stat="3"] h3').textContent = langData[lang].stat_3_h3;
+                document.querySelector('[data-stat="3"] p').textContent = langData[lang].stat_3_p;
+                document.querySelector('[data-stat="4"] h3').textContent = langData[lang].stat_4_h3;
+                document.querySelector('[data-stat="4"] p').textContent = langData[lang].stat_4_p;
+                
+                // 4. МИССИЯ
+                document.querySelector('#mission h2').textContent = langData[lang].mission_h2;
+                document.querySelector('[data-mission="1"] h3').textContent = langData[lang].mission_1_h3;
+                document.querySelector('[data-mission="1"] p').textContent = langData[lang].mission_1_p;
+                document.querySelector('[data-mission="2"] h3').textContent = langData[lang].mission_2_h3;
+                document.querySelector('[data-mission="2"] p').textContent = langData[lang].mission_2_p;
+                document.querySelector('[data-mission="3"] h3').textContent = langData[lang].mission_3_h3;
+                document.querySelector('[data-mission="3"] p').textContent = langData[lang].mission_3_p;
+
+                // 5. КУРС/ТАРИФТЕР
+                document.querySelector('#courses h2:first-of-type').innerHTML = langData[lang].courses_h2;
+                document.querySelector('#courses > div > p:first-of-type').textContent = langData[lang].courses_p;
+                document.querySelector('.pricing-table-container h2').textContent = langData[lang].tariffs_h2;
+
+                // 5.1 ТАРИФТЕР (Lite үлгісінде)
+                document.querySelector('[data-price="lite"] h4').textContent = langData[lang].lite_h4;
+                document.querySelector('[data-price="lite"] .price').innerHTML = langData[lang].lite_price;
+                document.querySelector('[data-price="lite"] li:nth-child(1)').childNodes[1].nodeValue = langData[lang].lite_list_1;
+                document.querySelector('[data-price="lite"] li:nth-child(2)').childNodes[1].nodeValue = langData[lang].lite_list_2;
+                document.querySelector('[data-price="lite"] li:nth-child(3)').childNodes[1].nodeValue = langData[lang].lite_list_3;
+                document.querySelector('[data-price="lite"] .cta-button').textContent = langData[lang].lite_cta;
+                // (Қалған тарифтер мен курстарды осылай жалғастыру қажет)
+
+                // 6. ИННОВАЦИЯ
+                document.querySelector('#innovation h2').innerHTML = langData[lang].innovation_h2;
+                document.querySelector('[data-innovation="1"] h3').innerHTML = '<i class="fas fa-universal-access"></i> ' + langData[lang].inn_1_h3;
+                document.querySelector('[data-innovation="1"] p').textContent = langData[lang].inn_1_p;
+                document.querySelector('[data-innovation="2"] h3').innerHTML = '<i class="fas fa-users-cog"></i> ' + langData[lang].inn_2_h3;
+                document.querySelector('[data-innovation="2"] p').textContent = langData[lang].inn_2_p;
+                document.querySelector('[data-innovation="3"] h3').innerHTML = '<i class="fas fa-briefcase"></i> ' + langData[lang].inn_3_h3;
+                document.querySelector('[data-innovation="3"] p').textContent = langData[lang].inn_3_p;
+
+                // 7. ПІКІРЛЕР
+                document.querySelector('#testimonials h2').innerHTML = langData[lang].test_h2;
+
+                // 8. ҚАРЖЫ
+                document.querySelector('#finance h2').innerHTML = langData[lang].finance_h2;
+                document.querySelector('[data-finance="1"] h3').innerHTML = '<i class="fas fa-sack-dollar"></i> ' + langData[lang].fin_1_h3;
+                document.querySelector('[data-finance="1"] p').textContent = langData[lang].fin_1_p_main;
+                document.querySelector('[data-finance="2"] h3').innerHTML = '<i class="fas fa-bullhorn"></i> ' + langData[lang].fin_2_h3;
+                document.querySelector('[data-finance="2"] p').textContent = langData[lang].fin_2_p_main;
+
+                // 9. КОМАНДА
+                document.querySelector('#team h2').innerHTML = langData[lang].team_h2;
+                document.querySelector('#team h3:nth-child(2)').textContent = langData[lang].team_partners_h3;
+                document.querySelector('#team h3:nth-child(3)').textContent = langData[lang].team_main_h3;
+
+
+                // 10. БАЙЛАНЫС
+                document.querySelector('#contact h2').textContent = langData[lang].contact_h2;
+                document.querySelector('#contact > div > p').textContent = langData[lang].contact_p;
+                document.querySelector('#contact-form input[type="text"]').placeholder = langData[lang].contact_name_ph;
+                document.querySelector('#contact-form input[type="email"]').placeholder = langData[lang].contact_email_ph;
+                document.querySelector('#contact-form textarea').placeholder = langData[lang].contact_msg_ph;
+                document.querySelector('#contact-form button[type="submit"]').textContent = langData[lang].contact_cta;
+
+                // 11. FOOTER
+                document.querySelector('footer .container p:first-of-type').textContent = langData[lang].footer_p;
+                
+                // Тіл батырмасының мәтінін жаңарту
+                languageBtn.innerHTML = (lang === 'kk' ? '<i class="fas fa-language"></i> Ru' : '<i class="fas fa-language"></i> Kz');
+            }
+
+            // Тілді ауыстыру
+            languageBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'kk' ? 'ru' : 'kk';
+                updateContent(currentLang);
+            });
+
+            // ======================================================================
+            // АРНАЙЫ МҮМКІНДІКТЕР (Текст, Контраст, Дауыс) (ӨЗГЕРІССІЗ)
+            // ======================================================================
+
+            // 1. КОНТРАСТ/ТҮС РЕЖИМДЕРІ
+            contrastBtn.addEventListener('click', () => { 
+                body.classList.toggle('high-contrast');
+                if (body.classList.contains('high-contrast')) {
+                    body.classList.remove('grayscale-mode');
+                }
+            });
+            
+            grayscaleBtn.addEventListener('click', () => {
+                body.classList.toggle('grayscale-mode');
+                 if (body.classList.contains('grayscale-mode')) {
+                    body.classList.remove('high-contrast');
+                }
+            });
+
+            // 2. ТЕКСТ ӨЛШЕМІ
+            increaseTextBtn.addEventListener('click', () => { body.classList.add('large-text'); });
+            decreaseTextBtn.addEventListener('click', () => { body.classList.remove('large-text'); });
+
+            // 3. ТЕКСТТІ ДАУЫСҚА АУЫСТЫРУ (SCREEN READER SIMULATION)
+            const synth = window.speechSynthesis;
+            if (!synth) {
+                speechBtn.disabled = true;
+                speechBtn.title = "Дауыстық оқу браузеріңізде қолжетімсіз";
+            }
+            
+            speechBtn.addEventListener('click', () => {
+                if (!speechEnabled) {
+                    speechEnabled = true;
+                    speechBtn.style.backgroundColor = 'red';
+                    speechBtn.innerHTML = '<i class="fas fa-volume-up"></i> Оқуда...';
+                    
+                    const elementsToRead = 'h1, h2, p, li, .cta-button';
+                    const textToRead = Array.from(document.querySelectorAll(elementsToRead))
+                        .map(el => el.textContent)
+                        .join('. ');
+                    
+                    const utterance = new SpeechSynthesisUtterance(textToRead);
+                    utterance.lang = currentLang === 'kk' ? 'kk-KZ' : 'ru-RU'; 
+                    
+                    utterance.onend = () => {
+                        speechEnabled = false;
+                        speechBtn.style.backgroundColor = 'var(--secondary-color)';
+                        speechBtn.innerHTML = '<i class="fas fa-volume-up"></i> Дауыстық Оқу';
+                    };
+                    
+                    synth.speak(utterance);
+                    
+                } else {
+                    synth.cancel();
+                    speechEnabled = false;
+                    speechBtn.style.backgroundColor = 'var(--secondary-color)';
+                    speechBtn.innerHTML = '<i class="fas fa-volume-up"></i> Дауыстық Оқу';
+                }
+            });
+            
+            // ⭐ БАСҚА ДА СКРИПТТЕР (ФОРМА ЖӘНЕ МЕНЮ) ⭐
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    alert('Рахмет! Өтініміңіз сәтті жіберілді. Менеджеріміз жақын арада сізбен хабарласады.');
+                    this.reset();
+                });
+            }
+
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('open');
+            });
+            
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('open')) {
+                        navMenu.classList.remove('open');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="accessibility-panel" style="background-color: var(--bg-white); padding: 10px 5%; text-align: right; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1010;">
+        <span style="font-weight: bold; margin-right: 15px; color: var(--primary-color);">Арнайы Мүмкіндіктер:</span>
+
+        <button id="speech-btn" style="background-color: var(--secondary-color); color: white; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 5px;" title="Экрандағы мәтінді дауыстап оқу"><i class="fas fa-volume-up"></i> Дауыстық Оқу</button>
+        <button id="grayscale-btn" style="background-color: var(--primary-color); color: white; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 5px;" title="Ақ-қара/түссіз режим"><i class="fas fa-tint-slash"></i> Түссіз Режим</button>
+        <button id="contrast-btn" style="background-color: var(--primary-color); color: white; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 5px;" title="Жоғары Контраст режимін қосу"><i class="fas fa-adjust"></i> Контраст</button>
+
+        <button id="language-btn" style="background-color: var(--secondary-color); color: white; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 5px;" title="Тілді ауыстыру (Қазақша/Орысша)"><i class="fas fa-language"></i> Ru</button>
+        
+        <button id="increase-text-btn" style="background-color: var(--accent-color); color: white; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 5px;" title="Шрифт өлшемін үлкейту"><i class="fas fa-plus"></i> А</button>
+        <button id="decrease-text-btn" style="background-color: var(--accent-color); color: white; border: none; padding: 8px 12px; margin-left: 5px; cursor: pointer; border-radius: 5px;" title="Шрифт өлшемін кішірейту"><i class="fas fa-minus"></i> А</button>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <span class="logo">Digital Qoldau</span> 
+            <div id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <nav id="nav-menu">
+                <a href="#mission" data-lang-key="nav_mission">Миссия</a>
+                <a href="#courses" data-lang-key="nav_courses">IT-Курстар</a>
+                <a href="#innovation" data-lang-key="nav_innovation">Инновация</a>
+                <a href="#finance" data-lang-key="nav_finance">Қаржы</a>
+                <a href="#testimonials" data-lang-key="nav_testimonials">Пікірлер</a>
+                <a href="#team" data-lang-key="nav_team">Команда</a>
+                <a href="#contact" class="cta-button" style="background-color: var(--accent-color); color: var(--text-color); box-shadow: none;" data-lang-key="nav_signup">Жазылу</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Шектеусіз IT-Болашақ: <span style="color: var(--secondary-color);">Digital Qoldau</span>-мен Бірге!</h1>
+                <p>Мүгедектігі бар азаматтарды қашықтықтан оқыту және IT-нарығына жұмысқа орналастыру арқылы **цифрлық теңдікті** қамтамасыз етеміз.</p>
+                <a href="#courses" class="cta-button">IT-Мамандықтарды Игеру <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-laptop-code fa-3x"></i> 
+                Қашықтықтан Білім беру
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-stat="1">
+                    <h3>700K+</h3>
+                    <p>Мүгедектігі бар азаматтар (gov.kz)</p>
+                </div>
+                <div class="stat-item" data-stat="2">
+                    <h3>80%</h3>
+                    <p>IT-саладағы жұмысқа орналасу мүмкіндігі</p>
+                </div>
+                <div class="stat-item" data-stat="3">
+                    <h3>5</h3>
+                    <p>Қашықтықтан оқытылатын IT-бағыттар</p>
+                </div>
+                <div class="stat-item" data-stat="4">
+                    <h3>$80K</h3>
+                    <p>Қажетті Қаржыландыру Сомасы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission" class="section">
+        <div class="container">
+            <h2>Миссия және Басты Мәселе</h2>
+            <div class="cards-grid">
+                <div class="card" style="border-left-color: #dc3545;" data-mission="1">
+                    <i class="fas fa-exclamation-triangle" style="color: #dc3545;"></i>
+                    <h3>МӘСЕЛЕ: Жұмыссыздық</h3>
+                    <p>Қазақстандағы 700 000+ мүмкіндігі шектеулі азаматтардың тек 20%-ы ғана тұрақты жұмыспен қамтылған және жұмыс платформасы жоқ</p>
+                </div>
+                <div class="card" data-mission="2">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>ШЕШІМ: Инклюзивті Платформа</h3>
+                    <p>Digital Qoldau - арнайы әзірленген инклюзивті интерфейсі бар, қашықтықтан оқытатын және жұмысқа орналастыруға кепілдік беретін платформа.</p>
+                </div>
+                <div class="card" style="border-left-color: var(--accent-color);" data-mission="3">
+                    <i class="fas fa-chart-line" style="color: var(--accent-color);"></i>
+                    <h3>НӘТИЖЕ: Экономикалық Интеграция</h3>
+                    <p>Білім беру арқылы олардың қаржылық тәуелсіздігін қамтамасыз ету, әлеуметтік интеграцияны және цифрлық теңдікті арттыру.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="courses" class="section" style="background-color: var(--bg-white);">
+        <div class="container">
+            <h2>🚀 Біз Ұсынатын IT-Курстар және Пакеттер</h2>
+            <p style="font-size: 1.2em; color: var(--text-color);">Әрбір курс инклюзивті оқыту әдістемелеріне негізделген, 3 деңгейлі пакеттер арқылы таңдауға болады.</p>
+
+            <div class="cards-grid">
+                
+                <div class="course-card-detailed">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Әзірлеу (Front-End)</h3>
+                    <p>Қашықтықтан жұмыс істеуге болатын ең сұранысқа ие және қолжетімді бағыттардың бірі.</p>
+                    <div class="course-specs">
+                        <div class="spec-item">Ұзақтығы: <span>5 ай</span></div>
+                        <div class="spec-item">Бастапқы Жалақы: <span>120K+ ₸</span></div>
+                        <div class="spec-item">Дағды: <span>HTML/CSS/JS</span></div>
+                    </div>
+                </div>
+
+                <div class="course-card-detailed">
+                    <i class="fas fa-palette"></i>
+                    <h3>Графикалық Дизайн & UI/UX</h3>
+                    <p>Көрнекі контент жасау, Figma және Adobe пакеттерімен жұмыс істеу дағдылары үйретіледі.</p>
+                    <div class="course-specs">
+                        <div class="spec-item">Ұзақтығы: <span>4 ай</span></div>
+                        <div class="spec-item">Бастапқы Жалақы: <span>100K+ ₸</span></div>
+                        <div class="spec-item">Дағды: <span>Figma, UX/UI негіздері</span></div>
+                    </div>
+                </div>
+
+                <div class="course-card-detailed">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Analysis (Деректер)</h3>
+                    <p>Сандарды сөйлету және бизнес шешімдер қабылдауға көмектесу. Логикалық ойлауды қажет етеді.</p>
+                    <div class="course-specs">
+                        <div class="spec-item">Ұзақтығы: <span>6 ай</span></div>
+                        <div class="spec-item">Бастапқы Жалақы: <span>150K+ ₸</span></div>
+                        <div class="spec-item">Дағды: <span>Excel, SQL, Python</span></div>
+                    </div>
+                </div>
+
+                <div class="course-card-detailed">
+                    <i class="fas fa-bug"></i>
+                    <h3>QA Тестілеу (Сапаны Бақылау)</h3>
+                    <p>Бағдарламалық өнімдердегі қателерді тауып, олардың сапасын тексеруге үйретеді.</p>
+                    <div class="course-specs">
+                        <div class="spec-item">Ұзақтығы: <span>3 ай</span></div>
+                        <div class="spec-item">Бастапқы Жалақы: <span>90K+ ₸</span></div>
+                        <div class="spec-item">Дағды: <span>Тестілеу негіздері, Баг-трекинг</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-table-container">
+                <h2 style="color: var(--secondary-color);">Тарифтік Пакеттерді Таңдаңыз</h2>
+                <div class="pricing-grid">
+                    
+                    <div class="price-package" data-price="lite">
+                        <h4>Lite Пакеті</h4>
+                        <div class="price">35 000 ₸ <sup>/ай</sup></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Эксперт видеосабақтарына қол жеткізу</li>
+                            <li><i class="fas fa-check-circle"></i> Үй тапсырмаларын автоматты тексеру</li>
+                            <li><i class="fas fa-times-circle"></i> Жеке менторлық (Жоқ)</li>
+                            <li><i class="fas fa-times-circle"></i> HR-жәрмеңкеге қатысу (Жоқ)</li>
+                            <li><i class="fas fa-times-circle"></i> Жұмысқа орналасуға көмек (Жоқ)</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Lite Пакетін Алу</a>
+                    </div>
+
+                    <div class="price-package standard-pro" data-price="standard">
+                        <h4 style="color: var(--secondary-color);">Standard Пакеті (Хит!)</h4>
+                        <div class="price" style="color: var(--secondary-color);">55 000 ₸ <sup>/ай</sup></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Барлық видеосабақтар + Бонус материалдар</li>
+                            <li><i class="fas fa-check-circle"></i> Аптасына 1 рет **куратормен** онлайн кездесу</li>
+                            <li><i class="fas fa-check-circle"></i> **Профориентолог** кеңесі</li>
+                            <li><i class="fas fa-check-circle"></i> Қорытынды тест және Сертификат</li>
+                            <li><i class="fas fa-times-circle"></i> Жұмысқа орналасуға көмек (Толық емес)</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Standard Пакетін Алу</a>
+                    </div>
+
+                    <div class="price-package" data-price="pro">
+                        <h4>Pro Пакеті</h4>
+                        <div class="price">90 000 ₸ <sup>/ай</sup></div>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Барлық мүмкіндіктер (Standard +)</li>
+                            <li><i class="fas fa-check-circle"></i> Аптасына 2 рет **жеке ментормен** сессия</li>
+                            <li><i class="fas fa-check-circle"></i> **HR-жәрмеңкеге** тікелей қатысу</li>
+                            <li><i class="fas fa-check-circle"></i> Портфолио жинауға толық көмек</li>
+                            <li><i class="fas fa-check-circle"></i> **Жұмысқа орналасуға кепілдік** (шартты)</li>
+                        </ul>
+                        <a href="#contact" class="cta-button">Pro Пакетін Алу</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="innovation" class="section">
+        <div class="container">
+            <h2>✨ Жобаның Инновациялық Артықшылықтары</h2>
+            <div class="cards-grid">
+                <div class="innovation-card" data-innovation="1">
+                    <h3><i class="fas fa-universal-access"></i> Толық Инклюзивті Интерфейс</h3>
+                    <p>Субтитр, дыбыстық оқу, контраст режимдері және жеңіл UX (User Experience) арқылы кез келген шектеуі бар адамға бейімделген.</p>
+                </div>
+                <div class="innovation-card" data-innovation="2">
+                    <h3><i class="fas fa-users-cog"></i> Жеке Оқу Траекториясы</h3>
+                    <p>Әр оқушының мүмкіндіктеріне сай жекеленген сабақтар, икемді уақыт кестесі және жеке менторлық қолдау.</p>
+                </div>
+                <div class="innovation-card" data-innovation="3">
+                    <h3><i class="fas fa-briefcase"></i> Жұмысқа Орналастыру Бөлімі</h3>
+                    <p>Түлектерді IT-компанияларға тікелей ұсыну. HR-жәрмеңкелер мен портфолио жасауға көмек арқылы нақты жұмысқа орналастыру.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section testimonial-section">
+        <div class="container">
+            <h2>💬 Түлектеріміздің Пікірлері</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p data-lang-key="test_1_p">"Көру қабілетім шектеулі болса да, QA тестілеу курсын сәтті аяқтадым. Интерфейс ыңғайлы және оқытушылардың қолдауы ерекше болды."</p>
+                    <span class="author">Әлішер, QA Тестілеуші</span>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p data-lang-key="test_2_p">"Front-End әзірлеуді үйреніп, қазір фриланс арқылы тапсырыстар орындаймын. Digital Qoldau - менің өмірімді өзгертті!"</p>
+                    <span class="author">Динара, Web-Әзірлеуші</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="finance" class="section">
+        <div class="container">
+            <h2>📈 Жобаның Қаржылық Негізі</h2>
+            <div class="finance-grid">
+                <div class="finance-block" data-finance="1">
+                    <h3><i class="fas fa-sack-dollar"></i> Бюджет және Шығындар</h3>
+                    <p style="font-size: 1.1em; font-weight: bold; color: #dc3545;">Жобаның жалпы бағасы: $100,000 | Қаржыландыру сомасы: $80,000 (80%)</p>
+                    <ul>
+                        <li><i class="fas fa-cogs"></i> Платформа әзірлеу және техникалық қызмет көрсету.</li>
+                        <li><i class="fas fa-user-tie"></i> Оқыту контентін жасау, оқытушылар мен қызметкерлердің жалақысы.</li>
+                        <li><i class="fas fa-ad"></i> Маркетинг және жарнамаға шығындар.</li>
+                    </ul>
+                </div>
+                
+                <div class="channel-block" data-finance="2">
+                    <h3><i class="fas fa-bullhorn"></i> Өткізу Арналары & Клиенттер</h3>
+                    <p style="font-size: 1.1em; font-weight: bold; color: var(--primary-color);">Негізгі аудитория: Мүгедектігі бар адамдар және IT-мамандарды іздейтін жұмыс берушілер.</p>
+                    <ul>
+                        <li><i class="fab fa-facebook-square"></i> Әлеуметтік желілердегі жарнамалар.</li>
+                        <li><i class="fas fa-sitemap"></i> Мемлекеттік бағдарламаларда және форумдарда таныстыру.</li>
+                        <li><i class="fas fa-hands-helping"></i> Инклюзивті ұйымдар және ҮЕҰ арқылы жұмыс.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section team-section">
+        <div class="container">
+            <h2>🤝 Біздің Серіктестер мен Команда</h2>
+            
+            <h3 style="margin-top: 3em; color: var(--primary-color);">Сенімді Серіктестер</h3>
+            <div class="partner-logos" style="display: flex; justify-content: center; gap: 30px; margin-top: 20px;">
+                <img src="https://via.placeholder.com/150x60?text=AIU" alt="Astana International University Логотипі">
+                <img src="https://via.placeholder.com/150x60?text=QazInnovations" alt="QazInnovations Логотипі">
+                <img src="https://via.placeholder.com/150x60?text=Партнер+1" alt="Әріптес Компания Логотипі">
+            </div>
+
+            <h3 style="margin-top: 3em; color: var(--primary-color);">Жобаның Негізгі Командасы (5 Мүше)</h3>
+            <div class="team-members" style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200/4096d2/ffffff?text=Қуантхан" alt="Қуантхан фотосы">
+                    <h4>Қуантхан</h4>
+                    <p>Жоба жетекшісі</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200/f06292/ffffff?text=Тоғжан" alt="Тоғжан фотосы">
+                    <h4>Тоғжан</h4>
+                    <p>Финанс/Коммерция</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200/9ccc65/ffffff?text=Арысбай" alt="Арысбай фотосы">
+                    <h4>Арысбай</h4>
+                    <p>Техникалық әзірлеу</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200/ffb74d/ffffff?text=Алма" alt="Алма фотосы">
+                    <h4>Алма</h4>
+                    <p>HR-Менеджер</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/200/64b5f6/ffffff?text=Дастан" alt="Дастан фотосы">
+                    <h4>Дастан</h4>
+                    <p>Бас Ментор (IT)</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-form" style="background-color: var(--bg-light); border-top: 1px solid #ddd;">
+        <div class="container">
+            <h2>Бізбен Хабарласыңыз</h2>
+            <p style="font-size: 1.1em; color: var(--text-color);">Сұрақтарыңыз болса, немесе курстарға жазылғыңыз келсе, деректеріңізді қалдырыңыз. Өтінімді жіберу батырмасы жұмыс істейді.</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Аты-жөніңіз" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Хабарламаңыз (міндетті емес)"></textarea>
+                <button type="submit" class="cta-button" style="background-color: var(--primary-color); color: white; border-color: var(--primary-color);">Өтінімді Жіберу</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 Digital Qoldau. Инклюзивті Білім Беру Платформасы.</p>
+            <div class="footer-links">
+                <a href="#mission">Миссия</a> |
+                <a href="#courses">Курстар</a> |
+                <a href="#contact">Байланыс</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
